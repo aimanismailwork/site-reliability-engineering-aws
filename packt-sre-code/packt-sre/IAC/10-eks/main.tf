@@ -6,9 +6,9 @@ locals {
   cluster_name        = "tf-eks-pyglobal-eu-west-2"
   rds_instance_name   = "cars"
   eks_security_group  = "sg-0b2e88cc0874e81b9"
-  alb_arn             = "arn:aws:elasticloadbalancing:eu-west-2:915793320862:loadbalancer/app/tf-ecs-simplepy-alb-eu-west-2/8d55184c3c904bd0"
+  alb_arn             = "arn:aws:elasticloadbalancing:eu-west-2:565393058166:loadbalancer/app/tf-ecs-simplepy-alb-eu-west-2/8d55184c3c904bd0"
   alb_name            = "tf-ecs-simplepy-alb-eu-west-2"
-  alb_target_arn      = "arn:aws:elasticloadbalancing:eu-west-2:915793320862:targetgroup/tf-ecs-simplepy-eu-west-2/93d77d67f48af047"
+  alb_target_arn      = "arn:aws:elasticloadbalancing:eu-west-2:565393058166:targetgroup/tf-ecs-simplepy-eu-west-2/93d77d67f48af047"
   main-node-userdata = <<USERDATA
 #!/bin/bash
 set -o xtrace

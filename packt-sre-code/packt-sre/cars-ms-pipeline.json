@@ -1,7 +1,7 @@
 {
     "pipeline": {
         "name": "cars-ms",
-        "roleArn": "arn:aws:iam::915793320862:role/service-role/AWSCodePipelineServiceRole-eu-west-2-cars-ms",
+        "roleArn": "arn:aws:iam::565393058166:role/service-role/AWSCodePipelineServiceRole-eu-west-2-cars-ms",
         "artifactStore": {
             "type": "S3",
             "location": "codepipeline-eu-west-2-929702243082"
@@ -94,7 +94,7 @@
         "version": 2
     },
     "metadata": {
-        "pipelineArn": "arn:aws:codepipeline:eu-west-2:915793320862:cars-ms",
+        "pipelineArn": "arn:aws:codepipeline:eu-west-2:565393058166:cars-ms",
         "created": 1591971343.868,
         "updated": 1591971703.928
     }

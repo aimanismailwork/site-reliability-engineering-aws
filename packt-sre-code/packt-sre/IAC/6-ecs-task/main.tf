@@ -16,9 +16,9 @@ locals {
   local_sec_group     = ["tf-ecs-tasks-sg"]
   rds_instance_name   = "cars"
   ecs_security_group      = "sg-0f7a2696e264f8fd1"
-  alb_arn             = "arn:aws:elasticloadbalancing:eu-west-2:915793320862:loadbalancer/app/tf-ecs-simplepy-alb/bf458fbb251610e0"
+  alb_arn             = "arn:aws:elasticloadbalancing:eu-west-2:565393058166:loadbalancer/app/tf-ecs-simplepy-alb/bf458fbb251610e0"
   alb_name            = "tf-ecs-simplepy-alb"
-  alb_target_arn      = "arn:aws:elasticloadbalancing:eu-west-2:915793320862:targetgroup/tf-ecs-simplepy/eab5163ca021e924"
+  alb_target_arn      = "arn:aws:elasticloadbalancing:eu-west-2:565393058166:targetgroup/tf-ecs-simplepy/eab5163ca021e924"
 }
 
 #get cluster data
@@ -74,7 +74,7 @@ EOF
 }
 
 resource "aws_ecs_task_definition" "ecs" {
-  task_role_arn            = "arn:aws:iam::915793320862:role/pysimple-task-role"
+  task_role_arn            = "arn:aws:iam::565393058166:role/pysimple-task-role"
   family                   = "pysimple"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]

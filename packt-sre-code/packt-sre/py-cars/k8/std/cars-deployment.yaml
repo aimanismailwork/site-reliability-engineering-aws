@@ -19,7 +19,7 @@ spec:
         app: pycars
     spec:
       containers:
-      - image: 915793320862.dkr.ecr.eu-west-2.amazonaws.com/py-cars
+      - image: 565393058166.dkr.ecr.eu-west-2.amazonaws.com/py-cars
         name: pycars
         ports:
           - containerPort: 8001
