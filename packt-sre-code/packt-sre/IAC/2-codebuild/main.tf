@@ -2,16 +2,20 @@ locals {
   source_repo      = "https://git-codecommit.eu-west-2.amazonaws.com/v1/repos/pysimple"
   source_repo_cars = "https://git-codecommit.eu-west-2.amazonaws.com/v1/repos/py-cars"
   source_branch    = "refs/heads/master"
-  vpc_id           = "vpc-05939a73c8684c026"
-  subnet_ids       = ["subnet-0b05b60e1a8d9a65b","subnet-071fabf574452338c","subnet-02d640b292e5a5709","subnet-0801380048c54cef6"]
-  sg_ids           = ["sg-0e4561a6947726ff0"]
+  vpc_id           = "vpc-0ed2bc2f43dbb5026"
+  subnet_ids = [
+    "subnet-0bd25405eff9662ef",
+    "subnet-0bd59873c9ee49b80",
+    "subnet-086ceea0b1a6edfbf"
+  ]
+  sg_ids           = ["sg-0a213b7a7b1115226"]
 }
 
 resource "aws_codebuild_project" "simple" {
   name           = "pysimple"
   description    = "pysimple build project"
   build_timeout  = "5"
-  service_role   = "arn:aws:iam::915793320862:role/service-role/codebuild-simple-py-service-role"
+  service_role   = aws_iam_role.codebuild_role.arn
   source_version = local.source_branch
   artifacts {
     type = "NO_ARTIFACTS"
@@ -29,7 +33,7 @@ resource "aws_codebuild_project" "simple" {
     }
     environment_variable {
       name  = "AWS_ACCOUNT_ID"
-      value = "915793320862"
+      value = "565393058166"
     }
     environment_variable {
       name  = "IMAGE_REPO_NAME"
@@ -64,7 +68,7 @@ resource "aws_codebuild_project" "cars" {
   name           = "pycars"
   description    = "cars MS build project"
   build_timeout  = "5"
-  service_role   = "arn:aws:iam::915793320862:role/service-role/codebuild-simple-py-service-role"
+  service_role   = aws_iam_role.codebuild_role.arn
   source_version = local.source_branch
   artifacts {
     type = "NO_ARTIFACTS"
@@ -82,7 +86,7 @@ resource "aws_codebuild_project" "cars" {
     }
     environment_variable {
       name  = "AWS_ACCOUNT_ID"
-      value = "915793320862"
+      value = "565393058166"
     }
     environment_variable {
       name  = "IMAGE_REPO_NAME"
